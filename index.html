@@ -1,0 +1,221 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<style>html{color-scheme:light dark}body{margin:0}[hidden]{display:none!important}</style>
+<title>앰플레이그라운드 릴스 촬영 가이드</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&family=IBM+Plex+Mono:wght@500&display=swap">
+<style>
+:root{
+  --paper:#F7F6F2;--ink:#1B1C1F;--ink-2:#4A4C52;--ink-3:#7C7E86;
+  --line:#DDDCD5;--panel:#FFFFFF;--panel-2:#EEEDE7;
+  --blue:#1E4FD0;--blue-soft:#E4EAFB;
+  --red:#C4361F;--red-soft:#F8E5E0;
+  --amber:#8A5A00;--amber-soft:#F6ECD2;
+  --green:#1A6B3C;--green-soft:#E0F2E9;
+  --shadow:0 1px 2px rgba(20,22,30,.06),0 6px 18px rgba(20,22,30,.06);
+}
+@media(prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --paper:#141518;--ink:#EDECE6;--ink-2:#B9B8B0;--ink-3:#83848C;
+    --line:#2C2D33;--panel:#1C1D22;--panel-2:#24252B;
+    --blue:#7A9BFF;--blue-soft:#1C2645;
+    --red:#FF8A70;--red-soft:#3A1F19;
+    --amber:#E8B85A;--amber-soft:#3A2E12;
+    --green:#5FD68A;--green-soft:#0F2E1E;
+    --shadow:0 1px 2px rgba(0,0,0,.4),0 6px 18px rgba(0,0,0,.35);
+  }
+}
+:root[data-theme="dark"]{
+  --paper:#141518;--ink:#EDECE6;--ink-2:#B9B8B0;--ink-3:#83848C;
+  --line:#2C2D33;--panel:#1C1D22;--panel-2:#24252B;
+  --blue:#7A9BFF;--blue-soft:#1C2645;
+  --red:#FF8A70;--red-soft:#3A1F19;
+  --amber:#E8B85A;--amber-soft:#3A2E12;
+  --green:#5FD68A;--green-soft:#0F2E1E;
+  --shadow:0 1px 2px rgba(0,0,0,.4),0 6px 18px rgba(0,0,0,.35);
+}
+*{box-sizing:border-box}
+body{background:var(--paper);color:var(--ink);font-family:"Noto Sans KR",-apple-system,"Apple SD Gothic Neo",sans-serif;font-size:15px;line-height:1.65;padding-inline:16px;padding-block:0 72px;-webkit-font-smoothing:antialiased}
+.wrap{max-width:720px;margin:0 auto}
+h1,h2,h3{text-wrap:balance;margin:0;line-height:1.25}
+p{margin:0}
+a{color:var(--blue)}
+
+/* header */
+.head{padding-block:40px 28px;border-bottom:1px solid var(--line)}
+.eyebrow{font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--blue);margin-bottom:10px}
+h1{font-size:clamp(24px,5vw,34px);font-weight:900;letter-spacing:-.01em}
+.lede{margin-top:12px;color:var(--ink-2);max-width:60ch}
+.meta{display:flex;flex-wrap:wrap;gap:6px 18px;margin-top:14px;font-size:13px;color:var(--ink-3)}
+.meta b{color:var(--ink-2);font-weight:500}
+
+/* tags */
+.tag{display:inline-block;font-size:11.5px;font-weight:700;letter-spacing:.06em;padding:2px 8px;border-radius:4px;vertical-align:middle}
+.tag.must{background:var(--blue);color:#fff}
+.tag.opt{background:var(--panel-2);color:var(--ink-2)}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]) .tag.must{color:#111}}
+:root[data-theme="dark"] .tag.must{color:#111}
+
+/* section */
+section{padding-block:30px;border-bottom:1px solid var(--line)}
+section:last-of-type{border-bottom:0}
+h2{font-size:20px;font-weight:900;letter-spacing:-.01em;display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+h2 .num{width:28px;height:28px;border-radius:50%;background:var(--blue);color:#fff;font-size:13px;font-weight:900;display:inline-flex;align-items:center;justify-content:center;flex-shrink:0}
+h2.th .num{background:var(--ink-2)}
+.scene-label{font-size:12px;font-weight:700;letter-spacing:.08em;color:var(--ink-3);margin-bottom:4px}
+
+/* caption boxes */
+.caps{display:grid;gap:8px;margin-top:14px}
+.cap-card{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:14px 16px;box-shadow:var(--shadow)}
+.cap-card .cap-label{font-size:11px;font-weight:700;letter-spacing:.08em;color:var(--ink-3);text-transform:uppercase;margin-bottom:6px}
+.cap-card .cap-text{font-size:14.5px;font-weight:700;line-height:1.5;color:var(--ink)}
+.cap-card .cap-text .slot{display:inline-block;padding:1px 6px;background:var(--amber-soft);color:var(--amber);border-radius:4px;font-size:13px;font-weight:700}
+.cap-card .cap-sub{font-size:12.5px;color:var(--ink-3);margin-top:4px;line-height:1.45}
+
+/* shot types */
+.shots{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
+.shot{padding:6px 12px;background:var(--green-soft);color:var(--green);border-radius:6px;font-size:13px;font-weight:700}
+
+/* desc box */
+.desc{margin-top:14px;padding:14px 16px;background:var(--panel-2);border-radius:10px;font-size:14px;color:var(--ink-2);line-height:1.6}
+.desc b{color:var(--ink);font-weight:700}
+
+/* note */
+.note{margin-top:14px;padding:12px 16px;background:var(--amber-soft);border-radius:8px;font-size:13.5px;color:var(--ink)}
+.note b{color:var(--amber);font-weight:700}
+
+/* cta */
+.cta-box{margin-top:14px;padding:18px 20px;background:var(--blue-soft);border-radius:12px;border-left:4px solid var(--blue)}
+.cta-box .cta-h{font-size:14px;font-weight:700;color:var(--blue);margin-bottom:6px}
+.cta-box ul{margin:0;padding-left:18px;font-size:14px;color:var(--ink-2)}
+.cta-box li{margin-bottom:4px}
+
+:focus-visible{outline:2px solid var(--blue);outline-offset:2px}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header class="head">
+  <div class="eyebrow">AMB Playground · 인플루언서 릴스 촬영 가이드</div>
+  <h1>앰플레이그라운드<br>겨울 릴스 촬영 가이드</h1>
+  <p class="lede">아래 썸네일 + 5개 장면을 순서대로 촬영해 릴스 1편을 완성하세요. <span class="tag must">필수</span> 화면이 빠지면 재촬영 대상입니다.</p>
+  <div class="meta">
+    <span><b>브랜드</b> AMB Playground (앰플레이그라운드)</span>
+    <span><b>영상 길이</b> 30~60초</span>
+    <span><b>장면 수</b> 썸네일 + 5장면</span>
+  </div>
+</header>
+
+<!-- ── 썸네일 ── -->
+<section>
+  <h2 class="th"><span class="num" style="background:var(--ink-2)">▣</span>썸네일 <span class="tag must">필수</span></h2>
+  <div class="scene-label" style="margin-top:16px">화면 구성</div>
+  <div class="shots">
+    <span class="shot">아웃터·겨울상품 착샷</span>
+    <span class="shot">목도리 등 겨울상품 착샷</span>
+    <span class="shot">겨울 느낌 마네킹 코디샷</span>
+  </div>
+  <div class="scene-label" style="margin-top:18px">추천 자막 (2가지 중 택1)</div>
+  <div class="caps">
+    <div class="cap-card">
+      <div class="cap-label">옵션 A</div>
+      <div class="cap-text"><span class="slot">다이소 / 테무</span> 보다 저렴한<br>500원 <span class="slot">옷가게 / 쇼핑맛집</span> <span class="slot">겨울신상 / 연말신상 / 연말쇼핑맛집</span></div>
+    </div>
+    <div class="cap-card">
+      <div class="cap-label">옵션 B</div>
+      <div class="cap-text">500원으로(부터) 쇼핑 가능한<br><span class="slot">옷가게 / 쇼핑맛집</span>의 <span class="slot">다이소 / 테무</span> <span class="slot">겨울신상 / 연말신상 / 연말쇼핑</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ── 장면 1 ── -->
+<section>
+  <h2><span class="num">1</span>후킹 — 매대샷 2~3컷 <span class="tag must">필수</span></h2>
+  <div class="desc">제품이 <b>가장 예쁘게 나온 매대샷 2~3컷</b>으로 시선을 잡아주세요.</div>
+  <div class="scene-label" style="margin-top:16px">자막</div>
+  <div class="caps">
+    <div class="cap-card">
+      <div class="cap-label">자막 A</div>
+      <div class="cap-text"><span class="slot">지역명</span>에서 500원부터 겨울쇼핑 가능한<br>옷가게의 <span class="slot">다이소 / 테무</span>가 있다고?</div>
+      <div class="cap-sub">지역명: 매장 근처 역명 또는 지역명 기재</div>
+    </div>
+  </div>
+</section>
+
+<!-- ── 장면 2 ── -->
+<section>
+  <h2><span class="num">2</span>겨울 소품 — 양말·장갑·비니·목도리 <span class="tag must">필수</span></h2>
+  <div class="desc">겨울 제품 2~3개 <b>가장 잘 나온 컷</b> + <b>목도리 착샷</b> + <b>가격 POP</b>가 함께 보이도록 촬영합니다.</div>
+  <div class="scene-label" style="margin-top:16px">자막 (2문장 연속)</div>
+  <div class="caps">
+    <div class="cap-card">
+      <div class="cap-label">1번째 자막</div>
+      <div class="cap-text">크리스마스 양말, 장갑, 비니 500원부터 구매 가능하고</div>
+    </div>
+    <div class="cap-card">
+      <div class="cap-label">2번째 자막</div>
+      <div class="cap-text">폭닥폭닥 목도리가 2장에 1만원대인데</div>
+    </div>
+  </div>
+</section>
+
+<!-- ── 장면 3 ── -->
+<section>
+  <h2><span class="num">3</span>폴리스 점퍼 · 기모 트레이닝 착샷 <span class="tag must">필수</span></h2>
+  <div class="desc"><b>폴리스 점퍼 착샷 + 기모 트레이닝바지 착샷</b>을 각각 찍고, 상품과 <b>9,900원 가격표</b>가 함께 나오도록 합니다.</div>
+  <div class="scene-label" style="margin-top:16px">자막 (2문장 연속)</div>
+  <div class="caps">
+    <div class="cap-card">
+      <div class="cap-label">1번째 자막</div>
+      <div class="cap-text">요즘 유행하는 폴리스 점퍼부터</div>
+    </div>
+    <div class="cap-card">
+      <div class="cap-label">2번째 자막</div>
+      <div class="cap-text">기모 트레이닝 바지가 1만원도 안 하는데</div>
+    </div>
+  </div>
+</section>
+
+<!-- ── 장면 4 ── -->
+<section>
+  <h2><span class="num">4</span>코디샷 2~3개 <span class="tag must">필수</span></h2>
+  <div class="desc">가장 잘 나온 <b>코디샷 2~3개</b>와 <b>마네킹 코디샷(가장 예쁜 것)</b>을 보여주세요.</div>
+  <div class="scene-label" style="margin-top:16px">자막 (2문장 연속)</div>
+  <div class="caps">
+    <div class="cap-card">
+      <div class="cap-label">1번째 자막</div>
+      <div class="cap-text">다른 제품들도 예쁘고 가격도 저렴한데</div>
+    </div>
+    <div class="cap-card">
+      <div class="cap-label">2번째 자막</div>
+      <div class="cap-text">옷 못 입어도 코디맛집이니</div>
+    </div>
+  </div>
+</section>
+
+<!-- ── 장면 5 ── -->
+<section>
+  <h2><span class="num">5</span>CTA — 매장 방문 유도 <span class="tag must">필수</span></h2>
+  <div class="scene-label" style="margin-top:14px">화면 구성</div>
+  <div class="shots">
+    <span class="shot">쇼핑백 컷</span>
+    <span class="shot">계산대 컷</span>
+    <span class="shot">매장 전경</span>
+  </div>
+  <div class="cta-box">
+    <div class="cta-h">자막 예시 (자유롭게 선택)</div>
+    <ul>
+      <li>겨울 쇼핑하러 빨리 가보자고</li>
+      <li>겨울 쇼핑은 여기서 다 해결</li>
+      <li>연말 쇼핑 여기서 끝내자</li>
+    </ul>
+  </div>
+  <div class="note" style="margin-top:14px"><b>Tip.</b> 댓글 유도 문구("+1 댓글 달면 DM", "저장해두세요")를 함께 넣으면 도달이 올라갑니다.</div>
+</section>
+
+</div>
+</body>
+</html>
